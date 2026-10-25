@@ -16,7 +16,7 @@ RUN set -eux \
  && tar -xzf /tmp/tunet.tar.gz --strip-components=1 -C /src \
  && cd /src \
  && npm ci \
- && npm run build
+ && VITE_ACCOUNT_LAYOUT_DEFAULT=true npm run build
 
 # ── Stage 2: Production image ────────────────────────────────────────
 FROM ghcr.io/hassio-addons/base:21.0.0
