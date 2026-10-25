@@ -1,0 +1,32 @@
+name: 'Tunet (mora build)'
+description: 'Tunet built from the ozanmora/Tunet mora branch (upstream plus pending PRs)'
+version: '1.24.2-mora.1'
+slug: 'tunet_mora'
+url: 'https://github.com/ozanmora/Tunet/tree/mora'
+init: false
+startup: application
+arch:
+  - aarch64
+  - amd64
+homeassistant_api: true
+auth_api: true
+ingress: true
+ingress_port: 3002
+panel_icon: 'mdi:view-dashboard-variant'
+panel_title: 'Tunet'
+ports:
+  3002/tcp: null
+ports_description:
+  3002/tcp: 'Tunet Web Interface (not needed when using Ingress)'
+options:
+  internal_ha_url: ''
+  internal_ha_fallback_url: ''
+  data_encryption_mode: 'off'
+  data_encryption_key: ''
+  data_encryption_salt: ''
+schema:
+  internal_ha_url: 'str?'
+  internal_ha_fallback_url: 'str?'
+  data_encryption_mode: 'list(off|dual|enc_only)?'
+  data_encryption_key: 'password?'
+  data_encryption_salt: 'password?'
