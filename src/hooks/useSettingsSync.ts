@@ -84,7 +84,8 @@ const getOrCreateDeviceId = () => {
 export const ACCOUNT_LAYOUT_DEVICE_ID = 'account';
 const ACCOUNT_LAYOUT_KEY = 'tunet_account_layout';
 const ACCOUNT_LAYOUT_ADOPT_KEY = 'tunet_account_layout_adopt';
-const ACCOUNT_LAYOUT_DEFAULT = false;
+// Builds can make the account layout the default with VITE_ACCOUNT_LAYOUT_DEFAULT=true.
+const ACCOUNT_LAYOUT_DEFAULT = import.meta.env?.VITE_ACCOUNT_LAYOUT_DEFAULT === 'true';
 
 export const readAccountLayoutPreference = () => {
   try {
