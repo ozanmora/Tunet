@@ -85,7 +85,9 @@ export const ACCOUNT_LAYOUT_DEVICE_ID = 'account';
 const ACCOUNT_LAYOUT_KEY = 'tunet_account_layout';
 const ACCOUNT_LAYOUT_ADOPT_KEY = 'tunet_account_layout_adopt';
 // Builds can make the account layout the default with VITE_ACCOUNT_LAYOUT_DEFAULT=true.
-const ACCOUNT_LAYOUT_DEFAULT = import.meta.env?.VITE_ACCOUNT_LAYOUT_DEFAULT === 'true';
+const ACCOUNT_LAYOUT_DEFAULT =
+  (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env
+    ?.VITE_ACCOUNT_LAYOUT_DEFAULT === 'true';
 
 export const readAccountLayoutPreference = () => {
   try {
