@@ -1,5 +1,5 @@
 # Local Home Assistant add-on: builds Tunet from the ozanmora/Tunet "mora" branch
-# (upstream main plus pending pull requests). Copy this folder to /addons/tunet_mora.
+# (upstream main plus pending pull requests). Copy this folder to /local_apps/tunet_mora (older Supervisor: /addons/tunet_mora).
 ARG TUNET_REPO=ozanmora/Tunet
 ARG TUNET_REF=mora
 

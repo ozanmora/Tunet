@@ -3,10 +3,10 @@
 Local Home Assistant add-on that builds Tunet from this fork's `mora` branch:
 upstream `main` plus pull requests that are not released yet.
 
-Install on Home Assistant OS (Terminal & SSH add-on):
+Install on Home Assistant OS (Terminal & SSH add-on; older Supervisor versions use /addons instead of /local_apps):
 
 ```sh
-mkdir -p /addons/tunet_mora && cd /addons/tunet_mora
+mkdir -p /local_apps/tunet_mora && cd /local_apps/tunet_mora
 for f in config.yaml Dockerfile run.sh icon.png logo.png translations/en.yaml; do
   mkdir -p "$(dirname "$f")"
   curl -fsSL "https://raw.githubusercontent.com/ozanmora/Tunet/mora/mora-addon/$f" -o "$f"
