@@ -4,6 +4,9 @@ cd /app
 export NODE_ENV=production
 export PORT=3002
 export TUNET_TRUST_SUPERVISOR_INGRESS=1
+# Keep the SQLite database (profiles, settings) in the add-on's persistent /data
+# folder; the default /app/data lives in the container and is lost on rebuild.
+export DATA_DIR=/data
 
 if bashio::config.has_value 'internal_ha_url'; then
 	export TUNET_INTERNAL_HA_URL="$(bashio::config 'internal_ha_url')"
